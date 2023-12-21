@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="key" style="width: 200px; height: 200px; border: 1px solid black; background-color:white;"></div>
+    <div id="container" style="width: 200px; height: 200px;"></div>
+    <script>
+
+        let colorActual;
+        const div = document.getElementById('key');
+        const container = document.getElementById('container');
+
+        const addcolor = () => {
+            div.style.backgroundColor = colorActual;
+        }
+
+        const addElement = () => {
+            const newElement = document.createElement('div')
+            newElement.style.backgroundColor = colorActual;
+            newElement.style.border = "1px solid"
+            newElement.style.width = "200px";
+            newElement.style.height = "200px"
+            container.appendChild(newElement)
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'a' || event.key === 'A') {
+                colorActual = 'pink'
+                addcolor()
+            }else if (event.key === 's' || event.key === 'S'){
+                colorActual = 'orange'
+                addcolor()
+            }else if (event.key === 'd' || event.key === 'D'){
+                colorActual = 'skyblue'
+                addcolor()
+            }else if (event.key === 'q' || event.key === 'Q'){
+                colorActual = 'purple'
+                addElement()
+                // console.log(colorActual)
+            }else if (event.key === 'w' || event.key === 'W'){
+                colorActual = 'grey'
+                addElement()
+            }else if (event.key === 'e' || event.key === 'E'){
+                colorActual = 'brown'
+                addElement()
+            }
+
+        })
+
+    </script>
+</body>
+</html>
